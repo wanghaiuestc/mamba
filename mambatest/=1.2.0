@@ -1,0 +1,6 @@
+Looking in indexes: https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
+Collecting causal-conv1d
+  Downloading https://mirrors.tuna.tsinghua.edu.cn/pypi/web/packages/db/df/63a384c49743b9fc8fec4c05dbd0b515e1c1c2b07e4559acc4fc37c69223/causal_conv1d-1.6.0.tar.gz (29 kB)
+  Installing build dependencies: started
+  Installing build dependencies: still running...
+  Installing build dependencies: finished with status 'canceled'
