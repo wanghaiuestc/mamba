@@ -1,10 +1,14 @@
-from transformers import MambaForCausalLM, AutoTokenizer
+from transformers import MambaConfig, MambaForCausalLM, AutoTokenizer
 import torch
 from transformers import logging
 logging.set_verbosity_info()
 # export HF_ENDPOINT=https://hf-mirror.com
-tokenizer = AutoTokenizer.from_pretrained("state-spaces/mamba-130m-hf")
-model = MambaForCausalLM.from_pretrained("state-spaces/mamba-130m-hf")
+
+config = MambaConfig.from_pretrained("state-spaces/mamba-130m-hf")
+# add this to avoid problem in transformer 5.0
+config.tie_word_embeddings = True
+tokenizer = AutoTokenizer.from_pretrained("state-spaces/mamba-130m-hf", config=config)
+model = MambaForCausalLM.from_pretrained("state-spaces/mamba-130m-hf", config=config)
 
 model.eval()  # inference mode
 
