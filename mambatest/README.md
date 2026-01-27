@@ -1,7 +1,7 @@
 1. export HF_ENDPOINT=https://hf-mirror.com
 2. conda create -n mambatest python=3.10.13 -y
 3. conda activate mambatest
-4. pip install -r requirements.txt
+4. install transformer as guided, like: pip install "transformers[torch]"
 5. python run.py
 ## mamba 
 location: transformers/src/models/mamba/modeling_mamba.py 
