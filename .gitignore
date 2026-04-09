@@ -176,3 +176,7 @@ tags
 # Cursor IDE files
 .cursor/
 test-results/
+
+# local mamba experiments
+mambatry/
+.*
