@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 """PyTorch MAMBA model."""
-"""Modified for fastiMamba, original file in src/transformer/bak folder"""
 
 import math
 from dataclasses import dataclass
@@ -245,7 +244,6 @@ class MambaMixer(nn.Module):
         cache_position: torch.LongTensor | None = None,
         attention_mask: torch.LongTensor | None = None,
     ):
-        print("cuda formward...")
         # 1. Gated MLP's linear projection
         projected_states = self.in_proj(hidden_states).transpose(1, 2)
 
@@ -342,7 +340,6 @@ class MambaMixer(nn.Module):
 
     # fmt: off
     def slow_forward(self, input_states, cache_params: MambaCache | None=None, cache_position:torch.LongTensor | None=None, attention_mask: torch.LongTensor | None = None):
-        print("slow formward...")
         batch_size, seq_len, _ = input_states.shape
         dtype = input_states.dtype
         # 1. Gated MLP's linear projection
